@@ -3,13 +3,13 @@
             <h1> User profile </h1>
             <img :src="image">
 
-            <span> Name: </span><b id="name"> Anna Smith </b>
+            <span> Name: </span><b id="name"> {{ name }}</b>
             <hr/>
             
-            <span> Email: </span><b id="email"> anna.smith@example.com </b>
+            <span> Email: </span><b id="email"> {{ email }} </b>
             <hr/> 
 
-            <span> Interesets: </span><b id="interests"> coding </b>
+            <span> Interesets: </span><b id="interests"> {{ interests }} </b>
             <hr/>  
             <button @click="handleEditProfile"> Edit Profile </button>
         </div>
@@ -19,15 +19,15 @@
             <img src="image">
 
             <span> Name: </span>
-            <input type="text" id="input-name" placeholder="Anna Smith" /> 
+            <input type="text" id="input-name" :placeholder="name" /> 
             <hr/>
             
             <span> Email: </span>
-            <input type="text" id="input-email" placeholder="anna.smith@example.com" />
+            <input type="text" id="input-email" :placeholder="email" />
             <hr/> 
 
             <span> Interesets: </span> 
-            <input type="text" id="input-interests" placeholder= "coding"/>
+            <input type="text" id="input-interests" :placeholder= "interests"/>
             <hr/>  
             <button @click="handleUpdateProfile"> Update Profile </button>            
          </div>
@@ -39,7 +39,10 @@ export default {
     name: 'App',
     data() {
         return {
-            image: image
+            image: image,
+            name: "Anna Smith",
+            email: "anna.smith@example.com",
+            interests: "coding"
         }
     },
     methods: {
