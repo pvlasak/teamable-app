@@ -2,8 +2,12 @@
   "name": "teamable",
   "version": "1.0.0",
   "dependencies": {
-    "Datepicker.js": "0.1.1",
-    "validator": "13.15.0",
-    "string": "3.3.3"
+    "vue": "3.5.29",
+    "core-js": "3.48.0",
+    "@vue/compiler-sfc": "3.5.29",
+    "@vue/cli-service": "5.0.9"
+  },
+  "scripts" :{
+    "serve": "vue-cli-service serve"
   }
 }
