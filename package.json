@@ -2,12 +2,15 @@
   "name": "teamable",
   "version": "1.0.0",
   "dependencies": {
-    "vue": "3.5.29",
-    "core-js": "3.48.0",
+    "@vue/cli-service": "5.0.9",
     "@vue/compiler-sfc": "3.5.29",
-    "@vue/cli-service": "5.0.9"
+    "core-js": "3.48.0",
+    "express": "5.2.1",
+    "vue": "3.5.29"
   },
-  "scripts" :{
-    "serve": "vue-cli-service serve"
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "start": "node server.js"
   }
 }

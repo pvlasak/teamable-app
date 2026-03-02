@@ -16,7 +16,7 @@
 
         <div v-show="isEditMode">
             <h1> User profile </h1>
-            <img src="image">
+            <img :src="image">
 
             <span> Name: </span>
             <input type="text" id="input-name" v-model="name" /> 
