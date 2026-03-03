@@ -46,7 +46,7 @@ app.post('/update-profile', async function(req, res) {
     console.log(payload)
 
     if (Object.keys(payload).length === 0) {
-        res.send({error: "empty payload. Could not update user profile."})
+        res.status(400).send({error: "empty payload. Could not update user profile."})
     } else {
                  
         await client.connect()
