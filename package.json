@@ -6,7 +6,8 @@
     "@vue/compiler-sfc": "3.5.29",
     "core-js": "3.48.0",
     "express": "5.2.1",
-    "vue": "3.5.29"
+    "vue": "3.5.29",
+    "mongodb": "7.1.0"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
