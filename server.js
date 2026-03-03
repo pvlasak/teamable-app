@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const { MongoClient} = require('mongodb')
+const { isEmptyPayload, isInvalidEmail } = require('./validator')
 
 const url = 'mongodb://localhost:27017'
 const client = new MongoClient(url)
@@ -45,8 +46,8 @@ app.post('/update-profile', async function(req, res) {
     const payload = req.body
     console.log(payload)
 
-    if (Object.keys(payload).length === 0) {
-        res.status(400).send({error: "empty payload. Could not update user profile."})
+    if (isEmptyPayload(payload) || isInvalidEmail(payload)) {
+        res.status(400).send({error: "invalid payload. Could not update user profile."})
     } else {
                  
         await client.connect()
@@ -64,6 +65,11 @@ app.post('/update-profile', async function(req, res) {
     }
 })
 
-app.listen(3000, function () {
+const server = app.listen(3000, function () {
     console.log("app listening on port 3000.")
 })
+
+module.exports = {
+    app,
+    server
+}
