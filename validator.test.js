@@ -29,3 +29,19 @@ test('invalid email', function() {
     const result = isInvalidEmail(testPayload)
     expect(result).toBe(true)
 })
+
+test('empty payload', function() {
+    const testPayload = {}
+    const result = isEmptyPayload(testPayload)
+    expect(result).toBe(true)
+})
+
+test('non empty payload', function() {
+    const testPayload = {
+        name: "test name",
+        email: "test.email@example.com",
+        interests: "coding"
+    }
+    const result = isEmptyPayload(testPayload)
+    expect(result).toBe(false)
+})
